@@ -85,7 +85,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="微服务,Go,">
 
 
 
@@ -101,13 +101,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="你的世界我来过">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="外部安全性外部安全是保护系统安全的第一道防线，通常包括第 2 层或第 3 层防火墙、DDoS 防护、web 应用防火墙以及其他软件和硬件层面的保护。在攻击者能够危及您的应用程序之前，他们必须首先通过这些硬件和软件层，这些层不是您的应用程序代码的一部分，而是应用程序中许多组件可能共享的共享基础架构层。在本节中，我们将介绍一些外部安全性以及可能对您使用的一些攻击。保护服务的边界通常是由操作完成的任务，">
+<meta name="keywords" content="微服务,Go">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第八章-第二节-外部安全性">
+<meta property="og:url" content="http://yoursite.com/Go教程/8-2-External-Security/index.html">
 <meta property="og:site_name" content="你的世界我来过">
+<meta property="og:description" content="外部安全性外部安全是保护系统安全的第一道防线，通常包括第 2 层或第 3 层防火墙、DDoS 防护、web 应用防火墙以及其他软件和硬件层面的保护。在攻击者能够危及您的应用程序之前，他们必须首先通过这些硬件和软件层，这些层不是您的应用程序代码的一部分，而是应用程序中许多组件可能共享的共享基础架构层。在本节中，我们将介绍一些外部安全性以及可能对您使用的一些攻击。保护服务的边界通常是由操作完成的任务，">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/Go教程/8-2-External-Security/Heartbleed.jpg">
+<meta property="og:updated_time" content="2019-05-28T06:19:35.364Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="你的世界我来过">
+<meta name="twitter:title" content="第八章-第二节-外部安全性">
+<meta name="twitter:description" content="外部安全性外部安全是保护系统安全的第一道防线，通常包括第 2 层或第 3 层防火墙、DDoS 防护、web 应用防火墙以及其他软件和硬件层面的保护。在攻击者能够危及您的应用程序之前，他们必须首先通过这些硬件和软件层，这些层不是您的应用程序代码的一部分，而是应用程序中许多组件可能共享的共享基础架构层。在本节中，我们将介绍一些外部安全性以及可能对您使用的一些攻击。保护服务的边界通常是由操作完成的任务，">
+<meta name="twitter:image" content="http://yoursite.com/Go教程/8-2-External-Security/Heartbleed.jpg">
 
 
 
@@ -136,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/Go教程/8-2-External-Security/">
 
 
 
 
 
-  <title>你的世界我来过</title>
+  <title>第八章-第二节-外部安全性 | 你的世界我来过</title>
   
 
 
@@ -167,9 +174,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-   page-home 
- ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 	
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -304,367 +309,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Go教程/8-5-Summary/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PotoYang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Paddington.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="你的世界我来过">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Go教程/8-5-Summary/" itemprop="url">第八章-第五节-总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T11:01:20+08:00">
-                2019-05-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Go教程/" itemprop="url" rel="index">
-                    <span itemprop="name">Go教程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  167
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在本章中，我们了解了您的服务可能会对入侵者造成的一些攻击。我们希望能够介绍加密的工作原理，以及我们如何利用 Go 的标准软件包来实现加密，以确保我们的服务安全。几乎没有什么可以完全保护自己免受坚定的攻击者的攻击；但是，使用本章中描述的简单技术应该构成您的标准工作实践。实施许多这些技术不会在很大程度上减缓您的开发周期；但是，它会给你一个保证你系统安全的优势。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Go教程/8-5-Summary/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Go教程/8-4-Maintenance/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PotoYang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Paddington.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="你的世界我来过">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Go教程/8-4-Maintenance/" itemprop="url">第八章-第四节-维护</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T11:00:36+08:00">
-                2019-05-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Go教程/" itemprop="url" rel="index">
-                    <span itemprop="name">Go教程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  1.2k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="维护"><a href="#维护" class="headerlink" title="维护"></a>维护</h2><p>保持系统安全的一个重要因素是，确保使用所有最新的安全补丁使其保持最新。这种方法需要应用于您的应用程序代码、服务器的操作系统和应用程序，如果您使用的是 Docker，还需要确保容器是最新的，以确保您没有漏洞。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Go教程/8-4-Maintenance/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -694,9 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Go教程/8-2-External-Security/" itemprop="url">第八章-第二节-外部安全性</a></h1>
+          <h1 class="post-title" itemprop="name headline">第八章-第二节-外部安全性</h1>
         
 
         <div class="post-meta">
@@ -801,199 +446,61 @@
       
 
       
-        
-          <h2 id="外部安全性"><a href="#外部安全性" class="headerlink" title="外部安全性"></a>外部安全性</h2><p>外部安全是保护系统安全的第一道防线，通常包括第 2 层或第 3 层防火墙、DDoS 防护、web 应用防火墙以及其他软件和硬件层面的保护。在攻击者能够危及您的应用程序之前，他们必须首先通过这些硬件和软件层，这些层不是您的应用程序代码的一部分，而是应用程序中许多组件可能共享的共享基础架构层。在本节中，我们将介绍一些外部安全性以及可能对您使用的一些攻击。保护服务的边界通常是由操作完成的任务，但是作为开发人员，我们需要了解流程和风险，因为它极大地增强了我们加固应用程序代码的能力。在本节中，我们将介绍外部安全性的通用方法以及黑客可以利用您的系统的一些方法。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Go教程/8-2-External-Security/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Go教程/8-1-Encryption-and-Signing/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PotoYang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Paddington.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="你的世界我来过">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Go教程/8-1-Encryption-and-Signing/" itemprop="url">第八章-第一节-加密与签名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T10:59:36+08:00">
-                2019-05-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Go教程/" itemprop="url" rel="index">
-                    <span itemprop="name">Go教程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  1.6k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  5
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="加密和签名"><a href="#加密和签名" class="headerlink" title="加密和签名"></a>加密和签名</h2><p>当我们研究保护数据的方式时，无论是静态还是动态，我们讨论的许多方法都将以加密方式保护数据。</p>
+        <h2 id="外部安全性"><a href="#外部安全性" class="headerlink" title="外部安全性"></a>外部安全性</h2><p>外部安全是保护系统安全的第一道防线，通常包括第 2 层或第 3 层防火墙、DDoS 防护、web 应用防火墙以及其他软件和硬件层面的保护。在攻击者能够危及您的应用程序之前，他们必须首先通过这些硬件和软件层，这些层不是您的应用程序代码的一部分，而是应用程序中许多组件可能共享的共享基础架构层。在本节中，我们将介绍一些外部安全性以及可能对您使用的一些攻击。保护服务的边界通常是由操作完成的任务，但是作为开发人员，我们需要了解流程和风险，因为它极大地增强了我们加固应用程序代码的能力。在本节中，我们将介绍外部安全性的通用方法以及黑客可以利用您的系统的一些方法。</p>
+<a id="more"></a>
+<h3 id="第-2-或第-3-层防火墙"><a href="#第-2-或第-3-层防火墙" class="headerlink" title="第 2 或第 3 层防火墙"></a>第 2 或第 3 层防火墙</h3><p>第 2 层更常用于路由，因为它只处理 MAC 地址而不处理 IP 地址，而第 3 层可识别 IP 地址。根据传统，第 2 层是唯一真正的不会增加延迟的方法，因为它的执行速度与网线速度大致相同。随着处理能力和内存的增加，第 3 层现在也以网线速度运行，一般来说，当我们查看边缘防火墙时（通常是系统的第一个入口点），它们现在将会是第 3 层。那么这给了我们什么提示呢？首先，它阻止边缘网络不需要的流量：我们限制外部世界可访问的端口，同时一些导向不允许访问内容的流量在防火墙处被拦截，这样就没有机会从源上进行攻击。除此之外，它还允许我们限制对某些端口的访问。例如，如果您正在运行服务器，则很可能需要某种形式的远程访问，例如 SSH。2015 年出现的 Heartbleed 漏洞利用了 OpenSSH 中的漏洞，直接暴露在网络上的 SSH 服务器很容易受到这种攻击。有效地使用防火墙意味着 SSH 等专用端口将被锁定到 IP 地址或 IP 范围，这可能是您的 VPN、办公室 IP 或公共 IP。这大大减少了攻击者利用此功能进行攻击的媒介，因此当您运行易受 Heartbleed 攻击的 OpenSSH 版本时，你需要将这些 SSH 连接置于受保护区域内。</p>
+<p>Heartbleed 漏洞利用了执行缓冲区溢出的能力进行攻击，例如，您要求服务器提供 4 个字母的单词，但指定长度为 500；你得到的是 4 个字母的单词，剩下的 496 个字符是跟随初始分配的内存地址的内存块。实际上，这就允许黑客随机访问服务器中的内存块；这些内存块可能包含更改密码请求等项目，这些项目为其提供访问服务器的凭据。如果您正在运行全局可用的 SSH 服务器，那么您可能会发现存在问题：</p>
+<p><img src="./Heartbleed.jpg" alt="./Heartbleed"></p>
+<h3 id="Web-应用程序防火墙"><a href="#Web-应用程序防火墙" class="headerlink" title="Web 应用程序防火墙"></a>Web 应用程序防火墙</h3><p>Web 应用程序防火墙（WAF）被配置为系统中的第二道或第三道防线。要了解 WAF 是什么，让我们看看 <strong>开源 Web 应用程序安全项目（OWASP）</strong>中的定义：</p>
 <blockquote>
-<p>”密码学是使用数学来加密和解密数据的科学。密码学使你能够存储敏感信息或通过不安全的网络（像互联网这样的线路）传输它，这样除了预期的接收者之外，任何人都无法读取它。“</p>
-<p>– 密码学概论，Network Associates 公司</p>
+<p>“Web 应用程序防火墙（WAF）是 HTTP 应用程序的防火墙。它将一组规则应用于 HTTP 会话。这些规则涵盖了常见的攻击，如跨站点脚本（XSS）和 SQL 注入。</p>
+<p>当代理技术保护客户端时， WAF 保护着服务器。部署 WAF 以保护特定 web 应用程序或 web 应用程序集。WAF 可以被视为反向代理。</p>
+<p>WAF 可能以应用、服务器插件或过滤器的形式出现，并且可以针对应用程序进行定制。执行此自定义的工作量很大，需要在修改应用程序时进行维护。“</p>
 </blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Go教程/8-1-Encryption-and-Signing/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<p>OWASP 是一个非常有用的资源，实际上为 ModSecurity 提供了一个核心规则集，可以防止 SQL 注入、XSS、Shellshock 等攻击。设置 WAF（如ModSecurity 和 OWASP CRS）应该是您的最低要求。在 Docker 容器中托管这个应该是相对微不足道的，这可能形成第 2 层防火墙后面的第二道防线。</p>
+<p>还有另一种选择：一些像 Cloudflare 这样的 CDN 公司提供托管的 WAF。这是对网络边缘的保护，并且由于Cloudflare 等企业的专业知识，您无需担心配置问题。事实上，Cloudflare 支持 <a href="https://www.modsecurity.org/crs/" target="_blank" rel="noopener">OWASP CRS</a>。</p>
+<h3 id="API-网关"><a href="#API-网关" class="headerlink" title="API 网关"></a>API 网关</h3><p>除了 WAF，API 网关也是一个有用的工具；这可以实现双重目的，即将公共 API 路由到其后端服务以及一些其他功能，例如边缘的令牌验证以及输入验证和转换。当我们谈到困惑的代理人问题时，防火墙后面的攻击者可以执行他们没有权限的命令，我们研究了加密网络令牌的可能性；这个问题是用于解密这些令牌的私钥需要分布在多个后端服务中。这使得管理密钥比其应有的难度更具挑战性。API 网关可以通过成为唯一可以解密消息的层来简化这种情况。其他服务使用公钥来验证签名。API 网关通常实现许多其他第一线功能，例如但不限于以下内容：</p>
+<ul>
+<li>请求验证</li>
+<li>授权</li>
+<li>速度限制</li>
+<li>日志记录</li>
+<li>缓存</li>
+<li>请求和响应传递</li>
+</ul>
+<p>WAF 和 API 网关之间存在交叉元素；但是，这两个应该被视为基础设施的两个截然不同的部分。关于 API 网关的提供者，这似乎是一个发展中的领域；AWS 具有高级 API 网关，如果您已购买 AWS PaS环境，则可以使用该网关。 对于独立部署，<a href="https://getkong.org/" target="_blank" rel="noopener">Kong</a>，<a href="https://tyk.io/" target="_blank" rel="noopener">Tyk</a>，<a href="https://apigee.com/api-management/#/homepage" target="_blank" rel="noopener">Apigee</a>，<a href="https://www.mashery.com/" target="_blank" rel="noopener">Mashery</a> 和 Mulesoft 的 <a href="https://www.mulesoft.com/" target="_blank" rel="noopener">Anypoint Platform</a> 都是该领域的领导者。当然，可以使用 Nginx 或 HAProxy 构建自己的 API 网关；但是，在开始构建自己的平台之前，我建议首先要看一看以上特定平台中的一个。</p>
+<h3 id="DDoS-防护"><a href="#DDoS-防护" class="headerlink" title="DDoS 防护"></a>DDoS 防护</h3><p>2016 年 10 月 21 日，攻击者使用 Mirai 僵尸网络攻击 DYN 的 DNS 服务器造成了一次大规模的网络瘫痪。Mirai 漏洞利用了中国的雄迈信息技术有限公司制造的 IP 摄像机和 DVR 的漏洞攻击者不是攻击目标，而是决定取消互联网基础设施的主要部分，淘汰美国东海岸和西海岸的大部分地区。Mirai 漏洞只利用 60 个用户名和密码来尝试更新易受攻击设备的固件。一旦安装了恶意软件，该设备就可以被僵尸网络控制。剩下要做的就是告诉机器人开始针对 DYN 域名服务器进行 DNS 攻击。</p>
+<p>Mirai 的代码已经发布在网上；你可以使用谷歌轻易地找到它。你会为这个代码的简单程度感到惊讶。现在，我不想从设计这种攻击的复杂性中得到任何东西；我只谈谈实现。该漏洞的相当大一部分代码是用 Go 编写的，因此非常易读。channel（通道）有一些很好的用途。如果您查看代码，请尝试甄别可以使用信号量改进的代码段。</p>
+<p>Akamai 发布的一份报告指出，今年所有攻击中有 98.34％ 是面向基础设施的，只有 1.66％ 的目标是应用层。在 98.34％ 中，只要保持网络环境干净，许多是可以避免的。让我们看看顶级威胁及其运作方式。</p>
+<h4 id="DDoS-攻击类型"><a href="#DDoS-攻击类型" class="headerlink" title="DDoS 攻击类型"></a>DDoS 攻击类型</h4><p>以下是 DDoS 攻击的类型“</p>
+<ul>
+<li>UDP 碎片</li>
+<li>DNS</li>
+<li>NTP</li>
+<li>Chargen</li>
+<li>UDP</li>
+<li>SYN</li>
+<li>SSDP</li>
+<li>ACK</li>
+</ul>
+<h5 id="UDP-碎片攻击"><a href="#UDP-碎片攻击" class="headerlink" title="UDP 碎片攻击"></a>UDP 碎片攻击</h5><p>UDP 碎片攻击是攻击者利用数据报碎片在网络上工作的方式。每个网络都有一个称为最大传输单元（MTU）的限制。如果发送到网络的数据报大于 MTU，则其会被分割成碎片进行传输。</p>
+<p>UDP 碎片攻击的工作原理是创建包含假包的数据报；当服务器试图重新组装这些包时，它无法完成，资源很快就会被消耗殆尽。</p>
+<h5 id="UDP-泛洪攻击"><a href="#UDP-泛洪攻击" class="headerlink" title="UDP 泛洪攻击"></a>UDP 泛洪攻击</h5><p>UDP 泛洪攻击的工作原理是将大量带有欺骗源地址的 UDP 数据包发送到 IP 地址。服务器将响应这些请求，向欺骗的地址发送回复。由于大量的攻击，路由器将超过其每秒 UDP 数据报的限制，并在一段时间内对同一安全区域中的所有地址停止发送消息。</p>
+<p>这通常也使用称为反射攻击的技术。当源地址 IP 被欺骗时，返回数据包不会被发送回真实源，而是发到被欺骗的 IP 地址。使用此技术的原因是它允许发送方通过仅消耗出站数据包上的资源来放大攻击。</p>
+<h5 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h5><p>DNS 攻击利用 UDP 泛洪攻击来获取 DNS 服务器；许多请求被用于查询 DNS 服务器。这些请求旨在从一个微小的请求返回一个非常庞大的回复，以最大限度地提高攻击效率，因为发送者通常不会收到响应。</p>
+<p>我们在早些时候看到的针对 Dyn 的基础设施的攻击，在 2016 年 10 月在美国东海岸和西海岸取出了许多网站，这种攻击就是 DNS 攻击。与大多数 DNS 攻击不同，Miraia 网络不使用反射攻击技术，它允许将响应返回给发送方，这可能是由于大量受损设备造成的。</p>
+<h5 id="NTP"><a href="#NTP" class="headerlink" title="NTP"></a>NTP</h5><p>NTP 是另一种放大攻击，它利用 NTP 服务器内置的功能，返回最后 600 台与之交互的机器。此攻击利用了支持 MONLIST 命令且尚未修补的开放 NTP 服务器。项目 <code>http://openntpproject.org/</code> 旨在识别未修补的服务器，以鼓励删除此漏洞。不幸的是，NSFOCUS 在 2014 年进行的研究发现，全球有超过 17,000 台服务器容易受到攻击。假设所有这些服务器都可以使用，并且使用 2014 年遭遇 CloudFlare 的 NTP 攻击的有效载荷大小，我们就有了 1.4Tbps 的 DDoS 攻击能力。这种流量将是目前已知的最大攻击的两倍。NTP 为最强大的应用程序攻击之一提供了一个平台，并且仅由于服务器修补不良而存在。</p>
+<h5 id="CHARGEN"><a href="#CHARGEN" class="headerlink" title="CHARGEN"></a>CHARGEN</h5><p><strong>CHARGEN（字符生成协议）</strong>攻击是另一种反射放大攻击。攻击利用开放的 CHARGEN 服务器，每次从连接的主机接收数据报时，在端口 19 上运行的服务器将返回 0 到 512 之间的随机字符长度。CHARGEN 旨在作为一种字节流的源来调试 TCP 网络代码和带宽测量。CHARGEN 攻击通过滥用已在网络连接的打印机上启用的 CHARGEN 服务器来工作。</p>
+<h5 id="SSDP"><a href="#SSDP" class="headerlink" title="SSDP"></a>SSDP</h5><p><strong>简单服务发现协议</strong>（SSDP），通常用于发现 <strong>即插即用</strong>（UPnP）设备。这正是您的家用路由器实现的协议，所以下次当您抱怨您最喜欢的游戏网络离线时，为什么不先检查您是否无意中将 SSDP 暴露在互联网上？</p>
+<h5 id="ACK"><a href="#ACK" class="headerlink" title="ACK"></a>ACK</h5><p>ACK 泛洪利用客户端连接到服务器时存在的三次握手。第一步是客户端发送一个 SYN 数据包，从服务器回复 SYN-ACK 数据包。然后客户端最后回复一个 ACK 数据包，然后为数据开放连接。ACK 泛洪采用以下两种形式之一：</p>
+<ul>
+<li>攻击者向服务器发送一个欺骗性的 SYN 数据包，然后使用一个伪造的 SYN-ACK 数据包。服务器打开并保持开放的连接。如果打开了足够多的连接，则服务器最终将耗尽资源。</li>
+<li>第二种方法是仅发送 ACK 包。由于服务器没有开放连接，因此该数据包将被丢弃；但是，它仍然消耗必须处理这些数据包的资源。</li>
+</ul>
+<p>攻击类似于 SYN 攻击；但是，由于它欺骗 DDoS 过滤器将数据包传递到服务器的方式，它可以更有效。</p>
+<p>避免这些攻击并非如此简单：您需要在网络边缘检测并过滤此活动。您还需要大量带宽来吸收系统入站的流量，在我看来，这不是内部解决方案可以或应该解决的问题。</p>
+<p>避免 DDoS 攻击的第一道防线是确保您没有启用它们。配置防火墙以确保您不暴露易受攻击的服务，并修补您的服务意味着攻击者无法使用您的网络基础架构来攻击其他人。第二条是利用 Cloudflare，Akamai，Imperva 或其他拥有基础架构和网络过滤器的专家的力量，来确保流量永远不会到达您的服务器。</p>
+
       
     </div>
     
@@ -1005,196 +512,63 @@
     
 
     
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    PotoYang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/Go教程/8-2-External-Security/" title="第八章-第二节-外部安全性">http://yoursite.com/Go教程/8-2-External-Security/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Go教程/8-0-Security/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PotoYang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Paddington.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="你的世界我来过">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Go教程/8-0-Security/" itemprop="url">第八章-安全性</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T10:58:02+08:00">
-                2019-05-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Go教程/" itemprop="url" rel="index">
-                    <span itemprop="name">Go教程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/微服务/" rel="tag"># 微服务</a>
           
-
+            <a href="/tags/Go/" rel="tag"># Go</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  131
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h1 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h1><p>微服务中的安全性可能就像一个雷区，在某种程度上确实是这样。本章主要介绍一些可以提高 Go 代码安全性的方法；但是，我觉得讨论一些更为广泛的问题也很重要。对防火墙配置等话题的深入讨论最好留给专业的书籍；但是，我们将介绍一些概念和所面临的问题，以便您可以为进一步阅读做好最充分的准备。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Go教程/8-0-Security/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Go教程/8-1-Encryption-and-Signing/" rel="next" title="第八章-第一节-加密与签名">
+                <i class="fa fa-chevron-left"></i> 第八章-第一节-加密与签名
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Go教程/8-4-Maintenance/" rel="prev" title="第八章-第四节-维护">
+                第八章-第四节-维护 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1204,10 +578,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1215,6 +590,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -1235,8 +614,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/Paddington.png" alt="PotoYang">
           <p class="site-author-name" itemprop="name">PotoYang</p>
@@ -1320,6 +708,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#外部安全性"><span class="nav-number">1.</span> <span class="nav-text">外部安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第-2-或第-3-层防火墙"><span class="nav-number">1.1.</span> <span class="nav-text">第 2 或第 3 层防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web-应用程序防火墙"><span class="nav-number">1.2.</span> <span class="nav-text">Web 应用程序防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API-网关"><span class="nav-number">1.3.</span> <span class="nav-text">API 网关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDoS-防护"><span class="nav-number">1.4.</span> <span class="nav-text">DDoS 防护</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DDoS-攻击类型"><span class="nav-number">1.4.1.</span> <span class="nav-text">DDoS 攻击类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#UDP-碎片攻击"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">UDP 碎片攻击</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#UDP-泛洪攻击"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">UDP 泛洪攻击</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DNS"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">DNS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NTP"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">NTP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CHARGEN"><span class="nav-number">1.4.1.5.</span> <span class="nav-text">CHARGEN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SSDP"><span class="nav-number">1.4.1.6.</span> <span class="nav-text">SSDP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ACK"><span class="nav-number">1.4.1.7.</span> <span class="nav-text">ACK</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1442,10 +846,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
