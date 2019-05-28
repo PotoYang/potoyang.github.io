@@ -13,6 +13,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[第八章-第五节-总结]]></title>
+    <url>%2FTest%2FTest%2F</url>
+    <content type="text"><![CDATA[Test]]></content>
+      <categories>
+        <category>Test</category>
+      </categories>
+      <tags>
+        <tag>Test001</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[第八章-第四节-维护]]></title>
     <url>%2FGo%E6%95%99%E7%A8%8B%2F8-4-Maintenance%2F</url>
     <content type="text"><![CDATA[维护保持系统安全的一个重要因素是，确保使用所有最新的安全补丁使其保持最新。这种方法需要应用于您的应用程序代码、服务器的操作系统和应用程序，如果您使用的是 Docker，还需要确保容器是最新的，以确保您没有漏洞。 为容器打补丁保持容器安全的最简单方法之一是确保定期构建和部署容器。通常情况下，如果服务没有处于活跃开发阶段，那么它可能不会在几个月内部署到生产中。由于此问题，您可能正在修补主机级应用程序库（如 OpenSSL），但由于容器提供的应用程序隔离，您可能在容器级别拥有易受攻击的二进制文件。保持最新状态的最简单方法是运行常规构建和部署，即使应用程序代码没有更改。您还需要确保如果在 Dockerfile 中使用基本容器，也会构建和更新它。 Docker hub，quay.io 和其他几个软件作为服务注册表，能够在链接容器更改时自动重建容器。如果要构建基于 golang：latest 的映像，则可以在将上游映像推送到注册表时自动触发构建。您还可以运行自动安全扫描，该扫描会检查映像中的图层并扫描任何 CVE 漏洞。它会让你知道漏洞存在于哪一层，你经常会发现这是在基础层，如 Ubuntu 或 Debian。 软件更新在主机和 Docker 映像中修补软件，可以帮助您远离 Openble 中的 Heartbleed 等漏洞。修补软件更新相对简单。您可以将主机配置为自动更新；我更喜欢的另一个选择是确保您的基础架构自动化，以便您可以将其清除并重建。 修补应用程序代码与主机上的软件需要更新的方式相同，您还必须更新应用程序代码以确保始终拥有最新的更新。通常，遵循将应用程序依赖关系锁定到版本的方法，并使用 Go 1.5 中引入的 vendoring 支持，此过程在社区中不断增长。这个问题的一个问题是，在 1.5 之前的版本中没有出现 vendoring 的主要原因之一是，鼓励您针对最新的软件包构建应用程序代码，并尽快修复因 API 更改而发生的任何问题。如果您确实使用了 vendoring，我肯定不会建议您不使用它，那么您应该每晚运行项目构建，将所有库更新到最新版本。您不一定要将其部署到生产中；但是，如果测试通过那么为什么不呢？即使它是一个没有正在开发的服务，如果测试失败，那么这也应该是你进行维护的理由。 日志记录如果我们保护了密码并实现了良好的安全性，我们仍然需要知道我们会何时受到威胁。在上一章中，我们介绍了日志记录，日志记录可以作为安全策略的一部分。考虑有人试图强行申请登录；当您需要对此威胁做出反应时，跟踪高级别的身份验证错误以及源 IP 可能非常有用。防火墙可以阻止攻击者的 IP 地址。 日志文件的内容需要考虑以下属性： 谁做出的这个行为 什么失败了或是成功了 行为什么时候出现的 为什么这个行为失败或是成功 你如何处理这个问题 以下示例包含的信息远远不够有用，事实上，除了让您知道可能存在故障之外，您甚至可能不会消耗此类日志所占用的空间： Aug 18 11:00:57 [AuthController] Authentication failed 以下示例要好得多；它以更深入的方式显示问题，并详细描述了用户访问系统所采取的事件。现代日志评估工具（如 Kibana）允许过滤和分组此类日志文件，从而可以构建仪表盘或事件列表： Aug 18 11:00:57 [AuthController] Authentication failure for nicj@example.com by 127.0.0.1 - user unknown - /user/login /user/myaccount Aug 18 11:01:18 [AuthController] Authentication failure for nicj@example.com by 127.0.0.1 - invalid password - /user/login?err=1 /user/login Aug 18 11:02:01 [AuthController] Authentication failure for nicj@example.com by 127.0.0.1 - incorrect 2FA code /user/login?err=2 /user/login 例如，您可以创建一个仪表盘，该仪表盘查看来自单个 IP 地址超过特定阈值的失败尝试次数，这可能表示恶意尝试强制访问系统。通常可以对此类事件设置警报，使您可以主动识别威胁并阻止访问。]]></content>
