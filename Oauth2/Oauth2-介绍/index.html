@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Oauth2 教程,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="An OAuth 2.0 introduction for beginnersThis article doesn’t want to be the final guide to OAuth 2, but an introduction to the flows that this framework is composed of. You’ll have a look at the four b">
+<meta name="keywords" content="Oauth2 教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oauth2 介绍">
+<meta property="og:url" content="http://localhost:4000/Oauth2/Oauth2-介绍/index.html">
+<meta property="og:site_name" content="你的世界我来过">
+<meta property="og:description" content="An OAuth 2.0 introduction for beginnersThis article doesn’t want to be the final guide to OAuth 2, but an introduction to the flows that this framework is composed of. You’ll have a look at the four b">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://localhost:4000/Oauth2/Oauth2-介绍/Oauth%202%20flows.png">
+<meta property="og:image" content="http://localhost:4000/Oauth2/Oauth2-介绍/Authorization%20Code%20Grant.png">
+<meta property="og:image" content="http://localhost:4000/Oauth2/Oauth2-介绍/Implicit%20Grant%20Flow.png">
+<meta property="og:image" content="http://localhost:4000/Oauth2/Oauth2-介绍/Client%20Credential.png">
+<meta property="og:image" content="http://localhost:4000/Oauth2/Oauth2-介绍/Password%20Grant%20flow.png">
+<meta property="og:image" content="http://localhost:4000/Oauth2/Oauth2-介绍/Which%20flow%20should%20I%20choose.png">
+<meta property="og:updated_time" content="2019-05-31T07:22:39.503Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oauth2 介绍">
+<meta name="twitter:description" content="An OAuth 2.0 introduction for beginnersThis article doesn’t want to be the final guide to OAuth 2, but an introduction to the flows that this framework is composed of. You’ll have a look at the four b">
+<meta name="twitter:image" content="http://localhost:4000/Oauth2/Oauth2-介绍/Oauth%202%20flows.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://localhost:4000/Oauth2/Oauth2-介绍/">
+
+
+
+
+
+  <title>Oauth2 介绍 | 你的世界我来过</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+	
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">你的世界我来过</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/Oauth2/Oauth2-介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="PotoYang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Paddington.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你的世界我来过">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Oauth2 介绍</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-31T14:45:07+08:00">
+                2019-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oauth2/" itemprop="url" rel="index">
+                    <span itemprop="name">Oauth2</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="An-OAuth-2-0-introduction-for-beginners"><a href="#An-OAuth-2-0-introduction-for-beginners" class="headerlink" title="An OAuth 2.0 introduction for beginners"></a>An OAuth 2.0 introduction for beginners</h1><p>This article doesn’t want to be the final guide to OAuth 2, but an introduction to the flows that this framework is composed of. You’ll have a look at the four basic flows and some practical scenarios, to understand the involved actors and the detailed behaviors. The goal is to be able to choose a flow that best fits your needs.</p>
+<p>Which Oauth 2 flow should you choose?</p>
+<a id="more"></a>
+<p>To make it as easy as possible, the experts will forgive me, we can say that there are four different versions. Or, more correctly, four different flows. OAuth 2 is the totality of these flows. It’s not mandatory to implement them all, but only the ones that you need.</p>
+<p>The goal remains always the same: <strong>to obtain an access_token</strong> and use it to access protected resources. The four modalities are:</p>
+<ul>
+<li><strong>Authorization Code Grant:</strong> A <em>code</em> is issued and used to obtain the <em>access_token</em>. This <em>code</em> is released to a front-end application (on the browser) after the user logs in. The access_token instead, is issued Server side, authenticating the client with its password and the obtained <em>code</em>.</li>
+<li><strong>Implicit Grant:</strong> after the user logs in, the access_token is issued immediately.</li>
+<li><strong>Client Credential Grant:</strong> the <em>access_token</em> is issued on the server, authenticating only the client, not the user.</li>
+<li><strong>Password Grant:</strong> the access_token is issued immediately with a single request containing all login information: username, user password, client id, and client secret. It could look easier to implement, but it has some complications.</li>
+</ul>
+<p><img src="/Oauth2/Oauth2-介绍/Oauth 2 flows.png" alt="Oauth 2 flows"></p>
+<h2 id="Authorization-Code-Grant"><a href="#Authorization-Code-Grant" class="headerlink" title="Authorization Code Grant"></a>Authorization Code Grant</h2><p><img src="/Oauth2/Oauth2-介绍/Authorization Code Grant.png" alt="Authorization Code Grant"></p>
+<p>This is the most complete and complex flow. The login process is divided into two phases, which ensure greater security.</p>
+<h3 id="The-involved-actors"><a href="#The-involved-actors" class="headerlink" title="The involved actors"></a>The involved actors</h3><ul>
+<li><strong>User</strong>: the person who wants to be authenticated, to access protected information.</li>
+<li><strong>Client App</strong>: In this flow, the client is usually the web application. The application must have both a front-end and a back-end, later we’ll see why. This means a pure Front-end application (Javascript, React, Angular) cannot implement this flow but can use the <em>Implicit grant</em> one.</li>
+<li><strong>Authorization Server</strong>: is the component that performs the authentication and the authorization, it handles login requests, user authentication, token generation, and security validations.</li>
+<li><strong>Resource Server</strong>: it exposes resources, as they could be REST API. After the <em>Client App</em> obtains the <em>access_token</em>, will use it to call the <em>Resource Server</em>. One of the differences between the Authorization Server and the Resource Server is that the first one “only” handles authentication and authorization, and the second one “only” serves the content (the resources). This division can generate some confusion: it’s important to remember this is a logic difference and not an implementation rule.</li>
+</ul>
+<h3 id="The-flow"><a href="#The-flow" class="headerlink" title="The flow"></a>The flow</h3><p>Let’s see in detail the <em>Authorization code grant</em> flow.</p>
+<h4 id="1-The-user-wants-to-log-in"><a href="#1-The-user-wants-to-log-in" class="headerlink" title="1. The user wants to log in"></a>1. The user wants to log in</h4><p>The classic scenario for this flow is played in the user browser. The user will click the “Login with OAuth” button and the client will generate and send a login request to the <em>Authorization Server</em>.</p>
+<h4 id="2-The-user-is-redirected-to-the-Authorization-Server"><a href="#2-The-user-is-redirected-to-the-Authorization-Server" class="headerlink" title="2. The user is redirected to the Authorization Server"></a>2. The user is redirected to the Authorization Server</h4><p>The client generates a login request for the <em>Authorization Server</em>. The request will be sent in the form of an <code>HTTP Redirect</code> and the information will be sent as <code>GET</code> parameters.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET /token</span><br><span class="line">Location: https://the-authorization-server/token?client_id=[the_client_id]&amp;redirect_uri=[a redirect uri]&amp;response_type=code&amp;scope=[list of scopes]&amp;state=[some client parameter]</span><br></pre></td></tr></table></figure>
+<p>The parameters are the following:</p>
+<ul>
+<li><strong>client_id</strong>: to identify the calling application</li>
+<li><strong>redirect_uri</strong>: the URL to which the <em>Authorization Server</em> will send (through a redirect) the <em>Authorization code</em>, after the user login.</li>
+<li><strong>response_type</strong>: identifies the type of response the <em>Authorization Server will return</em>. The value <code>code</code> is the one usually in the <em>Authorization code</em> flow.</li>
+<li><strong>scope</strong>: a list of permits the application asks the user. For example: <em>read_email</em>, <em>write_post</em>. The user will be asked to grant those permits. This will be useful when the client will access the <em>Resource Server</em>. This one will decide if permit o deny the access. For example a client, logging in with Facebook, ask the <code>email</code> scope. If the client (once obtained the token) calls the <code>/{user-id}/friendlists</code> API, that needs the <code>friend_list</code> scope, will obtain an access denied error.</li>
+<li><strong>state</strong>: this optional parameter will be returned as is to the client, after the login process. It can be used to retrieve information on the client application about, for example, to the user session.</li>
+</ul>
+<h4 id="3-Request-validation"><a href="#3-Request-validation" class="headerlink" title="3. Request validation"></a>3. Request validation</h4><p>L’<em>Authorization Server</em> must validate all the request parameters:</p>
+<ul>
+<li><strong>client_id</strong>: Does a client exist with this id? Is the client allowed to perform this request?</li>
+<li><strong>redirect_uri</strong>: Can the client use this redirect URI? Is this redirect URI associated with this client?</li>
+<li><strong>response_type</strong>: Is the client allowed to use this response type?</li>
+<li><strong>scope</strong>: Is the client allowed to use this grants?</li>
+</ul>
+<p>To execute these validations the <em>Authorization server</em> must have previously registered all the client that will access. The onboarding and the maintenance of clients are out of the OAuth scope.</p>
+<h4 id="4-Login-form"><a href="#4-Login-form" class="headerlink" title="4. Login form"></a>4. Login form</h4><p>The <em>Authorization server</em> shows the login form, and the user has to insert the username and password, to make the login (<em>step 5 in the picture</em>).</p>
+<p>After validating the data (<em>step 6 in the picture</em>) the <em>Authorization server</em> asks the user the consents specified in the <em>scopes.</em> The user will decide to grant, or not, one or more of the scopes. In a contrary case, the client will act in a different manner. For example, it could limit or inhibit the use of the application.</p>
+<h4 id="7-Redirect-to-the-client-with-the-authorization-code"><a href="#7-Redirect-to-the-client-with-the-authorization-code" class="headerlink" title="7. Redirect to the client with the authorization_code"></a>7. Redirect to the client with the authorization_code</h4><p>The <em>Authorization Server</em> generates an authorization code (<em>authorization_code</em>) and sends it to the client, to the URI specified in the request.</p>
+<p>All these operations have happened <em>client side</em>, on a browser (or a mobile app) for the next steps the client must use a back-end.</p>
+<blockquote>
+<p>This, in my opinion, is one of the aspects to consider when you choose which OAuth 2 flow best fits your needs.</p>
+</blockquote>
+<h4 id="8-and-9-Authorization-code-validation"><a href="#8-and-9-Authorization-code-validation" class="headerlink" title="8 and 9. Authorization code validation"></a>8 and 9. Authorization code validation</h4><p>Now the client has to call the <em>Authorization Server</em> to validate the received code. To do this operation it will pass:</p>
+<ul>
+<li>the <strong>authorization_code</strong> to be validated.</li>
+<li>the <strong>client_id</strong>: this is needed, along with the <em>client_secret,</em> to be sure the request actually comes from that client, and the token is not “stolen” when you were on the front-end.</li>
+<li>the <strong>client_secret</strong> is the client password, and it must be stored in a safe place, this is why you need a back-end.</li>
+</ul>
+<p>The <em>Authorization Server</em> executes all the above validations, checking the <em>authorization_code</em> is intact, not altered, not expired and issued for that specific client.</p>
+<h4 id="10-The-client-receives-the-access-token"><a href="#10-The-client-receives-the-access-token" class="headerlink" title="10. The client receives the access_token"></a>10. The client receives the access_token</h4><p>The A<em>uthorization server</em> creates an <strong>access_token</strong> and returns it to the client. There are many types of token, they have an expiration date and they can be refreshed. Usually, along with the token, are returned some more information:</p>
+<ul>
+<li>the <em>token_type:</em> one of most famous is <em>Bearer</em>, that means: grant access to the bearer of this token. <a href="https://tools.ietf.org/id/draft-ietf-oauth-v2-http-mac-05.html" target="_blank" rel="noopener">mac</a> is another type.</li>
+<li><em>expires_in</em>: the duration of the token</li>
+<li><em>refresh_token</em>: another token, to renew the <em>access_token</em> when it expires.</li>
+</ul>
+<h4 id="11-The-client-uses-the-access-token"><a href="#11-The-client-uses-the-access-token" class="headerlink" title="11. The client uses the access_token."></a>11. The client uses the access_token.</h4><p>Now that the client has obtained the <em>access_token</em>, it can use it to authenticate itself against the <em>Resource Server</em>.</p>
+<p>The <em>Resource Server</em> is a generic component and could serve many different types of resources: <em>REST API, SOAP Services, Web pages</em>, etc… Based on the resource type, the method to send the <em>access_token</em> can change. The most common way to send it against REST API is to use the HTTP header: <strong>Authorization</strong>, concatenating the <em>token_type</em> with <em>access_token</em>. Example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ</span><br></pre></td></tr></table></figure>
+<h4 id="12-and-13-Token-validation"><a href="#12-and-13-Token-validation" class="headerlink" title="12 and 13. Token validation"></a>12 and 13. Token validation</h4><p>When the Resource Server receives a request must check the token presence and integrity.</p>
+<p>The token validation, especially based on its type, can be done in many ways. In some cases the <em>Resource Server</em> can validate it, in some other must call the <em>Authorization server</em>.</p>
+<p>In some scenarios is possible that these two components are the same application, this is transparent and not important for the client. If you need to implement an OAuth server the choice on how to validate the token will vary based on your architecture and on the token type you’ll decide to use.</p>
+<h4 id="14-and-15-Access-and-display-the-protected-resources"><a href="#14-and-15-Access-and-display-the-protected-resources" class="headerlink" title="14 and 15. Access and display the protected resources."></a>14 and 15. Access and display the protected resources.</h4><p>Once the Resource server validates the token successfully, it will return the resource to the client, and this can display it to the user.</p>
+<h2 id="Implicit-Grant-Flow"><a href="#Implicit-Grant-Flow" class="headerlink" title="Implicit Grant Flow"></a>Implicit Grant Flow</h2><p><img src="/Oauth2/Oauth2-介绍/Implicit Grant Flow.png" alt="Implicit Grant Flow"></p>
+<p>This flow is very similar to the <em>Authentication Code</em> one, but the <em>access_token</em> <strong>is immediately returned to the client after the user login</strong>, in an <em>implicit</em> way. You use this flow in Single Page Applications and pure Javascript applications, where is not possible to keep the <em>client_secret</em> secret. The actors involved are the same as the previous flow.</p>
+<p>The first difference is that during the initial redirect to the <em>Authorization server,</em> the value of the parameter <em>response_type</em> is <code>token</code> instead of <code>code</code>. This means the type of response from the server will be (immediately) an <em>access_token</em>, instead of an <em>authorization_code</em>.</p>
+<p>In this way, you’ll have one step fewer to execute for the client, but also less secure, because the whole flow is executed on the browser (or <em>user-agent</em>generally speaking), including the token. In the <em>authorization code</em> flow, the token comes from a server to server call, so it is more difficult to intercept or manipulate it.</p>
+<h2 id="Client-Credential"><a href="#Client-Credential" class="headerlink" title="Client Credential"></a>Client Credential</h2><p><img src="/Oauth2/Oauth2-介绍/Client Credential.png" alt="Client Credential"></p>
+<p>The main difference between the flows mentioned above is that in this one there is no user interaction. The application executes the authentication request directly.</p>
+<p>This means the application cannot do any action on behalf of the user, but just on behalf of itself.</p>
+<p>This flow doesn’t take place on the browser but on a server. There are not redirect, but an <code>HTTP POST</code> call is executed, the parameters of the requests are:</p>
+<ul>
+<li>client_id</li>
+<li>client_secret</li>
+<li>grant_type: <code>client_credentials</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">POST /token</span><br><span class="line">&amp;client_id=my-fancy-client-application</span><br><span class="line">&amp;client_secret=xxxxxxx</span><br><span class="line">&amp;grant_type=client_credentials</span><br></pre></td></tr></table></figure>
+<p>The response of this request is the <em>access_token</em>, that can be spent on the <em>Resource server</em>.</p>
+<h2 id="Password-Grant-flow"><a href="#Password-Grant-flow" class="headerlink" title="Password Grant flow"></a>Password Grant flow</h2><p><img src="/Oauth2/Oauth2-介绍/Password Grant flow.png" alt="Password Grant flow"></p>
+<p>The main concept, in my opinion, of this flow, is <strong>the users enter their username and password in the client application</strong> and not in the <em>Authorization Server</em>. A noticeable thing is the credentials <em>“belong”</em> to the <em>Authorization Server,</em> not to the client,</p>
+<p>This fact implies that the users must fully trust the client application, to insert their <em>Authorization Server</em> credentials. To better understand this, imagine you make an application that logs in users with Facebook, but the users insert their (Facebook) username and password on that application. Would you, as a user, do this?</p>
+<p>You must be sure the application is absolutely trusted and, for example, does not save or modify your Facebook password.</p>
+<p>if I remember correctly, Spotify has this feature, probably using this OAuth 2 flow. I remember I did a login using Facebook credentials directly on Spotify.</p>
+<p>Once the username and the user password are collected on the front-end, they are sent to the application back-end, that executes an <code>HTTP POST</code> to the <em>Authorization Server</em>. The parameters of this request are:</p>
+<ul>
+<li><strong>grant_type</strong>: <code>password</code></li>
+<li><strong>username</strong> of the user</li>
+<li><strong>password</strong> of the user</li>
+<li><strong>client_id</strong></li>
+<li><strong>client_secret</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">POST /token</span><br><span class="line">grant_type=password</span><br><span class="line">&amp;username=username@authorization-server.com</span><br><span class="line">&amp;password=TheUserPassword</span><br><span class="line">&amp;client_id=my-fancy-client-app</span><br><span class="line">&amp;client_secret=xxxxxxx</span><br></pre></td></tr></table></figure>
+<p>The <em>Authorization server</em>, after validating all the credentials returns the l’<em>access_token</em>.</p>
+<p>For this flow, you need both a front-end and a back-end.</p>
+<h3 id="Implementation-of-OAuth-2"><a href="#Implementation-of-OAuth-2" class="headerlink" title="Implementation of OAuth 2"></a>Implementation of OAuth 2</h3><p>To implement OAuth 2 you have to develop:</p>
+<ul>
+<li>The client: if you want to use an <em>Authorization Server</em> services</li>
+<li>The server: if you want to expose authentication mechanisms</li>
+</ul>
+<h4 id="Client-side"><a href="#Client-side" class="headerlink" title="Client side"></a>Client side</h4><p>You must remember, again, that to implement some of the OAuth flows you need to use the client password, and this must be kept in a secure place. So you may need a server.</p>
+<p>This means you cannot implement some flows if you don’t have a server. The applications that don’t need a server ( to be served) are Single Page Application and the application that runs on a user device: Mobile and Desktop app. You can bypass this problem by creating a dedicated server or back-end to do the OAuth server calls, or by using some crypt mechanisms.</p>
+<h4 id="Server-side"><a href="#Server-side" class="headerlink" title="Server side"></a>Server side</h4><p>There are many frameworks in many languages that implement OAuth. This makes life a little easier, for the part of exposing the needed endpoints; and especially for all the validations that are needed. But rarely I found “turnkey” solutions.</p>
+<p>One hard thing to do is the onboarding and the management platform for the clients. Just think about the many existing <code>developers.[preferred-social-network].com</code> to understand they are complex applications.</p>
+<p>You also have to pay attention to the <em>scopes</em> and permissions, whose management is everything but banal, especially in the resource protection phase.</p>
+<p>Another point of interest is the token management. Use of a database is required, to guarantee the complete lifecycle:</p>
+<ul>
+<li>release</li>
+<li>renewal</li>
+<li>expiration</li>
+<li>revocation</li>
+</ul>
+<h3 id="Which-flow-should-I-choose"><a href="#Which-flow-should-I-choose" class="headerlink" title="Which flow should I choose?"></a>Which flow should I choose?</h3><p><img src="/Oauth2/Oauth2-介绍/Which flow should I choose.png" alt="Which flow should I choose"></p>
+<p>Answer these questions, and you will find out which best fits to you.</p>
+<p>The choice of the right flow depends on many factors, answer these questions to have an idea of which best fits you.</p>
+<blockquote>
+<p>Are you able to maintain the client_secret in a safe and secret place?</p>
+</blockquote>
+<ul>
+<li>Yes: next question</li>
+<li>No: <strong>IMPLICIT GRANT</strong></li>
+</ul>
+<blockquote>
+<p>Is your application a Web one?</p>
+</blockquote>
+<ul>
+<li>Yes: Answer next question</li>
+<li>No: <strong>CLIENT CREDENTIAL GRANT</strong></li>
+</ul>
+<blockquote>
+<p>Do your users trust you enough to insert their credentials (username and password) on your site? For example: Would users insert their Facebook password on your site?</p>
+</blockquote>
+<ul>
+<li>Yes: <strong>PASSWORD GRANT</strong></li>
+<li>No: <strong>AUTHORIZATION CODE GRANT</strong></li>
+</ul>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>I hope the world of OAuth is more clear now that you read this article, my goal was to explore the basics of this protocol. If you have any comment or proposition you are welcome to leave them down here.</p>
+<hr>
+<p>via: <a href="https://itnext.io/an-oauth-2-0-introduction-for-beginners-6e386b19f7a9" target="_blank" rel="noopener">https://itnext.io/an-oauth-2-0-introduction-for-beginners-6e386b19f7a9</a></p>
+<p>作者：<a href="https://itnext.io/@spyna" target="_blank" rel="noopener">Lorenzo Spyna</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    PotoYang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <!-- <a href="http://localhost:4000/Oauth2/Oauth2-介绍/" title="Oauth2 介绍">http://localhost:4000/Oauth2/Oauth2-介绍/</a> -->
+    <a href="/Oauth2/Oauth2-介绍/" title="Oauth2 介绍">http://localhost:4000/Oauth2/Oauth2-介绍/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oauth2-教程/" rel="tag"># Oauth2 教程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/读书笔记/每日一读-2019-05-31/" rel="next" title="每日一读-2019-05-31">
+                <i class="fa fa-chevron-left"></i> 每日一读-2019-05-31
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/月总结/每月一记-2019-05/" rel="prev" title="每月一记-2019-05">
+                每月一记-2019-05 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/Paddington.png" alt="PotoYang">
+          <p class="site-author-name" itemprop="name">PotoYang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/PotoYang" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:potoyang@163.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#An-OAuth-2-0-introduction-for-beginners"><span class="nav-number">1.</span> <span class="nav-text">An OAuth 2.0 introduction for beginners</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Authorization-Code-Grant"><span class="nav-number">1.1.</span> <span class="nav-text">Authorization Code Grant</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-involved-actors"><span class="nav-number">1.1.1.</span> <span class="nav-text">The involved actors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-flow"><span class="nav-number">1.1.2.</span> <span class="nav-text">The flow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-The-user-wants-to-log-in"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1. The user wants to log in</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-The-user-is-redirected-to-the-Authorization-Server"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">2. The user is redirected to the Authorization Server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Request-validation"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">3. Request validation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Login-form"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">4. Login form</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-Redirect-to-the-client-with-the-authorization-code"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">7. Redirect to the client with the authorization_code</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-and-9-Authorization-code-validation"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">8 and 9. Authorization code validation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-The-client-receives-the-access-token"><span class="nav-number">1.1.2.7.</span> <span class="nav-text">10. The client receives the access_token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-The-client-uses-the-access-token"><span class="nav-number">1.1.2.8.</span> <span class="nav-text">11. The client uses the access_token.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-and-13-Token-validation"><span class="nav-number">1.1.2.9.</span> <span class="nav-text">12 and 13. Token validation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-and-15-Access-and-display-the-protected-resources"><span class="nav-number">1.1.2.10.</span> <span class="nav-text">14 and 15. Access and display the protected resources.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implicit-Grant-Flow"><span class="nav-number">1.2.</span> <span class="nav-text">Implicit Grant Flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Client-Credential"><span class="nav-number">1.3.</span> <span class="nav-text">Client Credential</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Password-Grant-flow"><span class="nav-number">1.4.</span> <span class="nav-text">Password Grant flow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementation-of-OAuth-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">Implementation of OAuth 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Client-side"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">Client side</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Server-side"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">Server side</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Which-flow-should-I-choose"><span class="nav-number">1.4.2.</span> <span class="nav-text">Which flow should I choose?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">1.4.3.</span> <span class="nav-text">Conclusion</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">PotoYang</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by Hexo
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

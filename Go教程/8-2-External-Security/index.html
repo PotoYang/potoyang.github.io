@@ -105,16 +105,16 @@
 <meta name="keywords" content="微服务,Go">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第八章-第二节-外部安全性">
-<meta property="og:url" content="http://yoursite.com/Go教程/8-2-External-Security/index.html">
+<meta property="og:url" content="http://localhost:4000/Go教程/8-2-External-Security/index.html">
 <meta property="og:site_name" content="你的世界我来过">
 <meta property="og:description" content="外部安全性外部安全是保护系统安全的第一道防线，通常包括第 2 层或第 3 层防火墙、DDoS 防护、web 应用防火墙以及其他软件和硬件层面的保护。在攻击者能够危及您的应用程序之前，他们必须首先通过这些硬件和软件层，这些层不是您的应用程序代码的一部分，而是应用程序中许多组件可能共享的共享基础架构层。在本节中，我们将介绍一些外部安全性以及可能对您使用的一些攻击。保护服务的边界通常是由操作完成的任务，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/Go教程/8-2-External-Security/Heartbleed.jpg">
+<meta property="og:image" content="http://localhost:4000/Go教程/8-2-External-Security/Heartbleed.jpg">
 <meta property="og:updated_time" content="2019-05-28T06:19:35.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第八章-第二节-外部安全性">
 <meta name="twitter:description" content="外部安全性外部安全是保护系统安全的第一道防线，通常包括第 2 层或第 3 层防火墙、DDoS 防护、web 应用防火墙以及其他软件和硬件层面的保护。在攻击者能够危及您的应用程序之前，他们必须首先通过这些硬件和软件层，这些层不是您的应用程序代码的一部分，而是应用程序中许多组件可能共享的共享基础架构层。在本节中，我们将介绍一些外部安全性以及可能对您使用的一些攻击。保护服务的边界通常是由操作完成的任务，">
-<meta name="twitter:image" content="http://yoursite.com/Go教程/8-2-External-Security/Heartbleed.jpg">
+<meta name="twitter:image" content="http://localhost:4000/Go教程/8-2-External-Security/Heartbleed.jpg">
 
 
 
@@ -143,7 +143,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/Go教程/8-2-External-Security/">
+  <link rel="canonical" href="http://localhost:4000/Go教程/8-2-External-Security/">
 
 
 
@@ -324,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Go教程/8-2-External-Security/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/Go教程/8-2-External-Security/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="PotoYang">
@@ -450,7 +450,7 @@
 <a id="more"></a>
 <h3 id="第-2-或第-3-层防火墙"><a href="#第-2-或第-3-层防火墙" class="headerlink" title="第 2 或第 3 层防火墙"></a>第 2 或第 3 层防火墙</h3><p>第 2 层更常用于路由，因为它只处理 MAC 地址而不处理 IP 地址，而第 3 层可识别 IP 地址。根据传统，第 2 层是唯一真正的不会增加延迟的方法，因为它的执行速度与网线速度大致相同。随着处理能力和内存的增加，第 3 层现在也以网线速度运行，一般来说，当我们查看边缘防火墙时（通常是系统的第一个入口点），它们现在将会是第 3 层。那么这给了我们什么提示呢？首先，它阻止边缘网络不需要的流量：我们限制外部世界可访问的端口，同时一些导向不允许访问内容的流量在防火墙处被拦截，这样就没有机会从源上进行攻击。除此之外，它还允许我们限制对某些端口的访问。例如，如果您正在运行服务器，则很可能需要某种形式的远程访问，例如 SSH。2015 年出现的 Heartbleed 漏洞利用了 OpenSSH 中的漏洞，直接暴露在网络上的 SSH 服务器很容易受到这种攻击。有效地使用防火墙意味着 SSH 等专用端口将被锁定到 IP 地址或 IP 范围，这可能是您的 VPN、办公室 IP 或公共 IP。这大大减少了攻击者利用此功能进行攻击的媒介，因此当您运行易受 Heartbleed 攻击的 OpenSSH 版本时，你需要将这些 SSH 连接置于受保护区域内。</p>
 <p>Heartbleed 漏洞利用了执行缓冲区溢出的能力进行攻击，例如，您要求服务器提供 4 个字母的单词，但指定长度为 500；你得到的是 4 个字母的单词，剩下的 496 个字符是跟随初始分配的内存地址的内存块。实际上，这就允许黑客随机访问服务器中的内存块；这些内存块可能包含更改密码请求等项目，这些项目为其提供访问服务器的凭据。如果您正在运行全局可用的 SSH 服务器，那么您可能会发现存在问题：</p>
-<p><img src="./Heartbleed.jpg" alt="./Heartbleed"></p>
+<p><img src="/Go教程/8-2-External-Security/./Heartbleed.jpg" alt="./Heartbleed"></p>
 <h3 id="Web-应用程序防火墙"><a href="#Web-应用程序防火墙" class="headerlink" title="Web 应用程序防火墙"></a>Web 应用程序防火墙</h3><p>Web 应用程序防火墙（WAF）被配置为系统中的第二道或第三道防线。要了解 WAF 是什么，让我们看看 <strong>开源 Web 应用程序安全项目（OWASP）</strong>中的定义：</p>
 <blockquote>
 <p>“Web 应用程序防火墙（WAF）是 HTTP 应用程序的防火墙。它将一组规则应用于 HTTP 会话。这些规则涵盖了常见的攻击，如跨站点脚本（XSS）和 SQL 注入。</p>
@@ -520,11 +520,12 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/Go教程/8-2-External-Security/" title="第八章-第二节-外部安全性">http://yoursite.com/Go教程/8-2-External-Security/</a>
+    <!-- <a href="http://localhost:4000/Go教程/8-2-External-Security/" title="第八章-第二节-外部安全性">http://localhost:4000/Go教程/8-2-External-Security/</a> -->
+    <a href="/Go教程/8-2-External-Security/" title="第八章-第二节-外部安全性">http://localhost:4000/Go教程/8-2-External-Security/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
   </li>
 </ul>
 
@@ -637,7 +638,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -648,7 +649,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -659,7 +660,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
