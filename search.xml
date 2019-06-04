@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[每日一读-2019-06-04]]></title>
+    <url>%2F%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%2F%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%BB-2019-06-04%2F</url>
+    <content type="text"><![CDATA[演讲的技巧 在演讲中，难免会出现紧张的情况，甚至会出现错误，这时观众是不会太过于注意的，没有自己想想中的那么严重，需要的是继续进行下去，常用句型： 这里有些小问题，不过不重要，我们来看下一个话题。 没关系（这个小错误并没有太大的影响），我们继续 内向者的演讲者应该学会把握自身的优势，塑造好的形象。 塑造形象的方式：自嘲、建立信任、以小见大 内向的人学演讲，一开始最大的问题都是觉得无话可说。因为他们不明白，只要认真发掘自己真正关注的事情，总能找到一些既让听众觉得有意思，又跟演讲主题相关的内容。]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>好好说话</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[InterviewBit-Day2]]></title>
+    <url>%2FInterviewBit%2FInterviewBit-Day2%2F</url>
+    <content type="text"><![CDATA[ArraysIntroduction To Pointers In C/C++ 12&amp; --&gt; 地址的值* --&gt; 取值 “Whats the time complexity of the solution ?” “Can you improve the time complexity of your solution ?” 时间复杂度，选择最差的 主要的时间复杂度有： O(1)、O(logn)、O(n)、O(nlogn)、O(n^2^) 、O(n^3^)、O(n^k^)、O(2^n^)]]></content>
+      <categories>
+        <category>InterviewBit</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[InterviewBit-Day1]]></title>
     <url>%2FInterviewBit%2FInterviewBit-Day1%2F</url>
     <content type="text"><![CDATA[Time Complexity Of A Computer Program “Whats the time complexity of the solution ?” “Can you improve the time complexity of your solution ?” 时间复杂度，选择最差的 主要的时间复杂度有： O(1)、O(logn)、O(n)、O(nlogn)、O(n^2^) 、O(n^3^)、O(n^k^)、O(2^n^)]]></content>
@@ -14,7 +36,7 @@
   <entry>
     <title><![CDATA[收藏]]></title>
     <url>%2Funcategorized%2F%E6%94%B6%E8%97%8F%2F</url>
-    <content type="text"><![CDATA[2019-05-31https://github.com/Janche/springboot-security-project https://blog.csdn.net/qq_34997906/article/details/89600076 https://github.com/Janche/springboot-security-project https://github.com/dzinot/spring-boot-2-oauth2-authorization-jwt]]></content>
+    <content type="text"><![CDATA[2019-05-31https://github.com/Janche/springboot-security-project https://blog.csdn.net/qq_34997906/article/details/89600076 https://github.com/Janche/springboot-security-project https://github.com/dzinot/spring-boot-2-oauth2-authorization-jwt 2019-06-04 设计一个秒杀系统 设计一个支撑百万用户的IM消息系统 设计一个微信红包系统 设计一个电商平台积分兑换系统：https://juejin.im/post/5ce3cb09f265da1b6028d816]]></content>
   </entry>
   <entry>
     <title><![CDATA[每月一记-2019-05]]></title>
