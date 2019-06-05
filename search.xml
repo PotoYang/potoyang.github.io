@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[每日一读-2019-06-04]]></title>
     <url>%2F%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%2F%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%BB-2019-06-04%2F</url>
-    <content type="text"><![CDATA[演讲的技巧 在演讲中，难免会出现紧张的情况，甚至会出现错误，这时观众是不会太过于注意的，没有自己想想中的那么严重，需要的是继续进行下去，常用句型： 这里有些小问题，不过不重要，我们来看下一个话题。 没关系（这个小错误并没有太大的影响），我们继续 内向者的演讲者应该学会把握自身的优势，塑造好的形象。 塑造形象的方式：自嘲、建立信任、以小见大 内向的人学演讲，一开始最大的问题都是觉得无话可说。因为他们不明白，只要认真发掘自己真正关注的事情，总能找到一些既让听众觉得有意思，又跟演讲主题相关的内容。]]></content>
+    <content type="text"><![CDATA[演讲的技巧在演讲中，难免会出现紧张的情况，甚至会出现错误，这时观众是不会太过于注意的，没有自己想想中的那么严重，需要的是继续进行下去，常用句型： 这里有些小问题，不过不重要，我们来看下一个话题。 没关系（这个小错误并没有太大的影响），我们继续 内向者的演讲者应该学会把握自身的优势，塑造好的形象。 塑造形象的方式自嘲、建立信任、以小见大 内向的人学演讲，一开始最大的问题都是觉得无话可说。因为他们不明白，只要认真发掘自己真正关注的事情，总能找到一些既让听众觉得有意思，又跟演讲主题相关的内容。 用故事性叙述避免大脑空白应对公开演讲时的大脑空白，有一招最简单的方法：故事性陈述，步骤如下： 用故事带大纲：故事本身就是一个完整的大纲，根本不需要刻意去背 讲故事加感想：先点出主题，然后讲一个和主题相关的故事，接着说一点自己对这个故事的感想 贴标签存故事：一个故事可以对应多个主题 胜选演讲赞美对手、弥合分歧、感谢盟友，句型： 我真的非常欣赏…… 我们…… 这不是一次竞争，而是一次运动…… 败选演讲败选演讲的目的是要彰显自己的风度，甚至是为下一次的竞赛胜利打下基础，而表达自己的不服和透露出颓废的感觉都是不可取的。 原则：感谢盟友、威胁对手、澄清误解、重建形象 与观众建立信任 适当地降低观众的预期 在演讲中不动声色地建立起他人对自己专业的信任 讲给重要的人听点破尴尬 其实我也知道大家不爱听，但是为了广告商的利益，我还是要念一段广告 明确主题 虽然大家都急着吃饭，不过我们还是要先祝福新郎新娘 找对听众 也许这些祝福的话大家听起来有些老套，可却是对这对新人最美好的期盼]]></content>
       <categories>
         <category>读书笔记</category>
       </categories>
@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[InterviewBit-Day2]]></title>
     <url>%2FInterviewBit%2FInterviewBit-Day2%2F</url>
-    <content type="text"><![CDATA[ArraysIntroduction To Pointers In C/C++ 12&amp; --&gt; 地址的值* --&gt; 取值 “Whats the time complexity of the solution ?” “Can you improve the time complexity of your solution ?” 时间复杂度，选择最差的 主要的时间复杂度有： O(1)、O(logn)、O(n)、O(nlogn)、O(n^2^) 、O(n^3^)、O(n^k^)、O(2^n^)]]></content>
+    <content type="text"><![CDATA[ArraysIntroduction To Pointers In C/C++ 12&amp; --&gt; 地址的值* --&gt; 取值]]></content>
       <categories>
         <category>InterviewBit</category>
       </categories>
@@ -134,6 +134,18 @@
     <title><![CDATA[第八章-安全性]]></title>
     <url>%2FGo%E6%95%99%E7%A8%8B%2F8-0-Security%2F</url>
     <content type="text"><![CDATA[安全性微服务中的安全性可能就像一个雷区，在某种程度上确实是这样。本章主要介绍一些可以提高 Go 代码安全性的方法；但是，我觉得讨论一些更为广泛的问题也很重要。对防火墙配置等话题的深入讨论最好留给专业的书籍；但是，我们将介绍一些概念和所面临的问题，以便您可以为进一步阅读做好最充分的准备。]]></content>
+      <categories>
+        <category>Go教程</category>
+      </categories>
+      <tags>
+        <tag>微服务</tag>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第八章-安全性]]></title>
+    <url>%2FGo%E6%95%99%E7%A8%8B%2F8-0-Security%20-%20%E5%89%AF%E6%9C%AC%2F</url>
+    <content type="text"><![CDATA[微服务中的安全性可能就像一个雷区，在某种程度上确实是这样。本章主要介绍一些可以提高 Go 代码安全性的方法；讨论一些更为广泛的问题也很重要。对防火墙配置等话题的深入讨论最好留给专业的书籍；但是，我们将介绍一些概念和所面临的问题，以便您可以为进一步阅读做好最充分的准备。]]></content>
       <categories>
         <category>Go教程</category>
       </categories>
