@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="你的世界我来过">
 <meta property="og:description" content="PracticeMerge IntervalsGiven a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary). You may assume that the intervals were initially sorted according to the">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-13T10:10:57.537Z">
+<meta property="og:updated_time" content="2019-06-17T02:42:46.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="InterviewBit-Day5">
 <meta name="twitter:description" content="PracticeMerge IntervalsGiven a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary). You may assume that the intervals were initially sorted according to the">
@@ -452,6 +452,7 @@
 <p>Given <code>[1,2],[3,5],[6,7],[8,10],[12,16]</code>, insert and merge <code>[4,9]</code> would result in <code>[1,2],[3,10],[12,16]</code>.</p>
 <p>This is because the new interval <code>[4,9]</code> overlaps with <code>[3,5],[6,7],[8,10]</code>.</p>
 <p>Make sure the returned intervals are also sorted.</p>
+<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for an interval.</span></span><br><span class="line"><span class="comment"> * public class Interval &#123;</span></span><br><span class="line"><span class="comment"> *     int start;</span></span><br><span class="line"><span class="comment"> *     int end;</span></span><br><span class="line"><span class="comment"> *     Interval() &#123; start = 0; end = 0; &#125;</span></span><br><span class="line"><span class="comment"> *     Interval(int s, int e) &#123; start = s; end = e; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Interval&gt; <span class="title">insert</span><span class="params">(ArrayList&lt;Interval&gt; intervals, Interval newInterval)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;Interval&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (Interval interval : intervals) &#123;</span><br><span class="line">            <span class="keyword">if</span> (interval.end &lt; newInterval.start) &#123;</span><br><span class="line">                res.add(interval);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (interval.start &gt; newInterval.end) &#123;</span><br><span class="line">                res.add(newInterval);</span><br><span class="line">                newInterval = interval;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (interval.end &gt;= newInterval.start || </span><br><span class="line">            interval.start &lt;= newInterval.end) &#123;</span><br><span class="line">                <span class="keyword">int</span> newStart = Math.min(interval.start, newInterval.start);</span><br><span class="line">                <span class="keyword">int</span> newEnd = Math.max(interval.end, newInterval.end);</span><br><span class="line">                newInterval = <span class="keyword">new</span> Interval(newStart, newEnd);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        res.add(newInterval);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Wave-Array"><a href="#Wave-Array" class="headerlink" title="Wave Array"></a>Wave Array</h2><p>Given an array of integers, sort the array into a wave like array and return it,<br>In other words, arrange the elements into a sequence such that <code>a1 &gt;= a2 &lt;= a3 &gt;= a4 &lt;= a5.....</code></p>
 <p><strong>Example</strong></p>
@@ -519,6 +520,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/InterviewBit/InterviewBit-Day6/" rel="prev" title="InterviewBit-Day6">
+                InterviewBit-Day6 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -593,7 +598,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
