@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[面试-翼果科技]]></title>
+    <url>%2F%E9%9D%A2%E8%AF%95%2F%E9%9D%A2%E8%AF%95-%E7%BF%BC%E6%9E%9C%E7%A7%91%E6%8A%80%2F</url>
+    <content type="text"><![CDATA[翼果（深圳）科技有限公司介绍翼果（深圳）科技有限公司成立于2015年，公司核心成员来自华为等知名企业，主要合伙人具有500强企业10年以上工作经验和海外工作经历，团队技术实力强，具备国际化视野。 公司研发由多名顶级技术专家领衔，产品和技术氛围浓郁，作风务实，注重研发基础能力建设和技术积累，员工技能培训完善，技术能力成长快。公司已与众多企业客户建立业务合作关系，并获得知名机构投资，业务和团队处于蓬勃发展期，员工职业晋升快，发展空间大。 公司人际关系简单，倡导多劳多得和责任结果导向，实行骨干员工全员持股，提供具备行业竞争力的综合福利待遇。 如果您有梦想、有意愿、有能力，希望通过自己的拼搏获得快速的成长和丰厚的回报，我们热切欢迎您加入我们的队伍，共同奋斗成长！ 所在行业TouchData是一家专注于出海电商行业的营销数据服务商，公司拥有多款行业领先的大数据分析和精准营销产品，是中国出海电商领域用户数据分析和精准营销应用的市场领导者。 公司产品及服务覆盖数据采集、清洗、分析、用户管理、智能营销推广等多个领域，数据分析和应用能力行业领先，产品差异化优势明显，已为出海电商行业数千家中小企业和众多数十亿级别的电商巨头提供成功的数据和营销解决方案服务。 面试流程笔试、一面技术面、二面逻辑题、三面老总面谈 笔试一共三道大题 Java 基础题两个类，B 类继承于 A 类。A 类内部有一个字段，已经被初始化，同时有对字段的 get()、set() 方法。B 类继承于 A 类，重写 A 类的 set() 方法。在 main() 方法中，对对应的 A、B 类多态行为进行考察。 主要考察对 Java 基础知识多态的掌握，在实际类中的运用情况。 SQL 语句编写1、对 limit 的运用 2、对时间函数的运用 3、对 group by 的运用 4、对 order by 的运用 编程题统计 words.txt 中单词出现的次数 一面技术面试，涵盖基础知识点 HashMap 和 List 的内部实现 Spring IOC 原理及为什么要用 IOC Spring AOP 原理 Spring 事务处理 MyBatis 如何解析生成 SQL 语句 项目中你用了什么，对项目有什么样的改进 SQL 语句调优（不定期出现 SQL 语句查询变慢） 二面逻辑面试 3L、5L 杯子量出 4L 水 三个女儿年龄问题 大学学习的软件方面科目 学习科目中哪个科目最好 三面为什么要离开上一家 有什么想了解的 为什么选择来深圳 学习东西依靠被人带还是自己能行 为什么要来我们公司 有什么问题]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[InterviewBit-Day8]]></title>
     <url>%2FInterviewBit%2FInterviewBit-Day8%2F</url>
     <content type="text"><![CDATA[PracticeGreatest Common DivisorGiven 2 non negative integers m and n, find gcd(m, n) GCD of 2 integers m and n is defined as the greatest integer g such that g is a divisor of both m and n.Both m and n fit in a 32 bit signed integer. Example 1234m : 6n : 9GCD(m, n) : 3 NOTE : DO NOT USE LIBRARY FUNCTIONS 123456789101112131415161718192021222324252627282930public class Solution &#123; public int gcd(int A, int B) &#123; if (A == B) &#123; return A; &#125; if (B == 0 || A == 0) &#123; return 1; &#125; if (A &gt; B) &#123; int temp = A; A = B; B = temp; &#125; ArrayList&lt;Integer&gt; AFactories = new ArrayList&lt;&gt;(); for (int i = 1; i &lt;= A; i++) &#123; if (A%i == 0) &#123; AFactories.add(i); &#125; &#125; for (int i = AFactories.size() - 1; i &gt;= 0; i--) &#123; if (B%AFactories.get(i) == 0) &#123; return AFactories.get(i); &#125; &#125; return 1; &#125;&#125; Rearrange ArrayRearrange a given array so that Arr[i] becomes Arr[Arr[i]] with O(1) extra space. Example: 12Input : [1, 0]Return : [0, 1] Lets say N = size of the array. Then, following holds true : All elements in the array are in the range [0, N-1] N * N does not overflow for a signed integer 123456789101112131415public class Solution &#123; public void arrange(ArrayList&lt;Integer&gt; a) &#123; int n = a.size(); for (int i = 0; i &lt; n; i++) &#123; int v = a.get(i); int w = a.get(v) % n; int x = v + w * n; a.set(i, x); &#125; for (int i = 0; i &lt; n; i++) &#123; int v = a.get(i); a.set(i, v/n); &#125; &#125;&#125; Palindrome IntegerDetermine whether an integer is a palindrome. Do this without extra space. A palindrome integer is an integer x for which reverse(x) = x where reverse(x) is x with its digit reversed.Negative numbers are not palindromic. Example : 12345Input : 12121Output : TrueInput : 123Output : False 1234567891011121314151617public class Solution &#123; public boolean isPalindrome(int a) &#123; if(a == check(a)) return true; else return false; &#125; public int check(int num)&#123; int reverted = 0; while (num &gt; 0) &#123; reverted = reverted*10 + num%10; num /= 10; &#125; return reverted; &#125;&#125;]]></content>
